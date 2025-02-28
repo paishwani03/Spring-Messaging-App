@@ -9,6 +9,7 @@ public class HelloController {
     public String sayHello() {
         return "Hello from BridgeLabz";
     }
+
     @GetMapping("/hello/query")
     public String sayHelloWithQuery(@RequestParam String name) {
         return "Hello " + name + " from BridgeLabz";
@@ -18,4 +19,13 @@ public class HelloController {
     public String sayHelloPath(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
+
+
+    @GetMapping("/hello/query{name}")
+    public String sayHelloWithQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+}
+
+
 }
