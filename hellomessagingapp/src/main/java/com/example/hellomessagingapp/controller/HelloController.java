@@ -1,7 +1,9 @@
 package com.example.hellomessagingapp.controller;
 
+import com.example.hellomessagingapp.dto.UserDTO;
 
 import com.example.hellomessagingapp.dto.UserDTO;
+
 
 import org.springframework.web.bind.annotation.*;
 
@@ -21,17 +23,27 @@ public class HelloController {
 
     @GetMapping("/hello/param/{name}")
 
+    @GetMapping("/hello/param/{name}")
+
     @GetMapping("/hello/param{name}")
+
 
     public String sayHelloPath(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
 
-
     @PostMapping("/hello/post")
     public String sayHelloPost(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
+
+
+    @PutMapping("/hello/put/{firstName}")
+    public String sayHelloPut(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
+    }
+}
+
 }
 
 
